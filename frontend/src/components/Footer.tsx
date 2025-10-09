@@ -1,6 +1,6 @@
 import { Github } from "lucide-react";
 
-const GITHUB_URL = "https://github.com/Eric-Philippe/Ylab-Hackathon";
+const GITHUB_URL = "https://github.com/Hackathon-Ynov/YLab-Shop";
 
 export function Footer() {
   return (
