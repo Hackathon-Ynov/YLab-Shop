@@ -37,7 +37,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/eric-philippe/ylab-hackathon:${{ matrix.tag }}
+          tags: ghcr.io/hackathon-ynov/ylab-shop:${{ matrix.tag }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           platforms: linux/${{ matrix.arch }}
