@@ -55,6 +55,10 @@ export default function AdminTeamsPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const getSelectTeamIndex = (teamId: number) => {
+    return teams.findIndex((t) => t.id === teamId);
+  };
+
   const handleToggleSlot = async (
     teamId: number,
     department: Department,
@@ -153,7 +157,7 @@ export default function AdminTeamsPage() {
                 <CardTitle>Teams Overview</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                {teams.map((team) => (
+                {teams.map((team, index) => (
                   <button
                     key={team.id}
                     onClick={() => setSelectedTeam(team)}
@@ -163,7 +167,9 @@ export default function AdminTeamsPage() {
                         : "border-gray-200 hover:border-gray-300"
                     }`}
                   >
-                    <div className="font-semibold mb-2">{team.name}</div>
+                    <div className="font-semibold mb-2">
+                      #{index + 1} - {team.name}
+                    </div>
                     <div className="flex flex-wrap gap-1.5">
                       {renderDepartmentCircles(team)}
                     </div>
@@ -188,6 +194,7 @@ export default function AdminTeamsPage() {
               <Card className="h-full">
                 <CardHeader>
                   <CardTitle className="text-2xl">
+                    # {getSelectTeamIndex(selectedTeam.id)} -{" "}
                     {selectedTeam.name} - Composition
                   </CardTitle>
                   <p className="text-sm text-gray-500">
