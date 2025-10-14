@@ -194,7 +194,7 @@ export default function AdminTeamsPage() {
               <Card className="h-full">
                 <CardHeader>
                   <CardTitle className="text-2xl">
-                    # {getSelectTeamIndex(selectedTeam.id)} -{" "}
+                    # {getSelectTeamIndex(selectedTeam.id) + 1} -{" "}
                     {selectedTeam.name} - Composition
                   </CardTitle>
                   <p className="text-sm text-gray-500">
